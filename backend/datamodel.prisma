@@ -11,7 +11,7 @@ type Product{
   image: String
   largeImage: String
   originalPrice: Int!
-  discount: Int!
+  discount: Int
   price: Int!
   createdAt: DateTime!
   updatedAt: DateTime!
