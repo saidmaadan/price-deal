@@ -48,3 +48,4 @@ class Products extends Component {
   }
 }
 export default Products;
+export { ALL_PRODUCTS_QUERY };

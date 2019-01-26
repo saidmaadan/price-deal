@@ -158,11 +158,12 @@ _defineProperty(Product, "propTypes", {
 /*!********************************!*\
   !*** ./components/Products.js ***!
   \********************************/
-/*! exports provided: default */
+/*! exports provided: default, ALL_PRODUCTS_QUERY */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ALL_PRODUCTS_QUERY", function() { return ALL_PRODUCTS_QUERY; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "./node_modules/react-apollo/react-apollo.browser.umd.js");
@@ -291,6 +292,7 @@ function (_Component) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Products);
 
+
 /***/ }),
 
 /***/ "./components/styles/PriceTag.js":
@@ -308,7 +310,7 @@ var PriceTag = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span.wi
   displayName: "PriceTag",
   componentId: "sc-1ryh7pl-0"
 })(["background:", ";transform:rotate(3deg);color:white;font-weight:600;padding:5px;line-height:1;font-size:3rem;display:inline-block;position:absolute;top:-3px;right:-3px;"], function (props) {
-  return props.theme.red;
+  return props.theme.green;
 });
 /* harmony default export */ __webpack_exports__["default"] = (PriceTag);
 
@@ -356,7 +358,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h3.withCon
   displayName: "Title",
   componentId: "hdpnvx-0"
 })(["margin:0 1rem;text-align:center;transform:skew(-5deg) rotate(-1deg);margin-top:-3rem;text-shadow:2px 2px 0 rgba(0,0,0,0.1);a{background:", ";display:inline;line-height:1.3;font-size:4rem;text-align:center;color:white;padding:0 1rem;}"], function (props) {
-  return props.theme.red;
+  return props.theme.green;
 });
 /* harmony default export */ __webpack_exports__["default"] = (Title);
 
@@ -28980,7 +28982,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!*********************************!*\
   !*** multi ./pages/products.js ***!
   \*********************************/
@@ -29005,5 +29007,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[6,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=products.js.map
