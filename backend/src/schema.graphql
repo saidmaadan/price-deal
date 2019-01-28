@@ -9,8 +9,16 @@ type Mutation{
         discount: Int
         price: Int
         ): Product!
+    updateProduct(
+        id: ID!, 
+        title: String,
+        description: String, 
+        originalPrice: Int,
+        discount: Int,
+        price: Int): Product!
 }
 
 type Query{
     products: [Product]!
+    product(where: ProductWhereUniqueInput!): Product
 }
