@@ -5,8 +5,9 @@ import Title from './styles/Title';
 import ProductStyles from './styles/ProductStyles';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
+import DeleteProduct from './DeleteProduct';
 
-class Product extends Component {
+export default class Product extends Component {
     static propTypes = {
         product: PropTypes.object.isRequired,
       };
@@ -36,9 +37,10 @@ class Product extends Component {
                 >
                     <a>Edit ✏️</a>
                 </Link>
+                <button>Add To cart</button>
+                <DeleteProduct id={product.id}>Delete This Product</DeleteProduct>
             </div>
         </ProductStyles>
     );
   }
 }
-export default Product;

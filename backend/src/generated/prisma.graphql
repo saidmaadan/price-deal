@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/said-maadan-5c289b/price-deal/dev
-# timestamp: Thu Jan 24 2019 23:56:53 GMT-0600 (Central Standard Time)
+# timestamp: Wed Jan 30 2019 09:09:58 GMT-0600 (Central Standard Time)
 
 type AggregateProduct {
   count: Int!
@@ -71,7 +71,7 @@ type Product implements Node {
   image: String
   largeImage: String
   originalPrice: Int!
-  discount: Int
+  discount: String
   price: Int!
   createdAt: DateTime!
   updatedAt: DateTime!
@@ -93,7 +93,7 @@ input ProductCreateInput {
   image: String
   largeImage: String
   originalPrice: Int!
-  discount: Int
+  discount: String
   price: Int!
 }
 
@@ -136,7 +136,7 @@ type ProductPreviousValues {
   image: String
   largeImage: String
   originalPrice: Int!
-  discount: Int
+  discount: String
   price: Int!
   createdAt: DateTime!
   updatedAt: DateTime!
@@ -187,7 +187,7 @@ input ProductUpdateInput {
   image: String
   largeImage: String
   originalPrice: Int
-  discount: Int
+  discount: String
   price: Int
 }
 
@@ -197,7 +197,7 @@ input ProductUpdateManyMutationInput {
   image: String
   largeImage: String
   originalPrice: Int
-  discount: Int
+  discount: String
   price: Int
 }
 
@@ -432,28 +432,46 @@ input ProductWhereInput {
 
   """All values greater than or equal the given value."""
   originalPrice_gte: Int
-  discount: Int
+  discount: String
 
   """All values that are not equal to given value."""
-  discount_not: Int
+  discount_not: String
 
   """All values that are contained in given list."""
-  discount_in: [Int!]
+  discount_in: [String!]
 
   """All values that are not contained in given list."""
-  discount_not_in: [Int!]
+  discount_not_in: [String!]
 
   """All values less than the given value."""
-  discount_lt: Int
+  discount_lt: String
 
   """All values less than or equal the given value."""
-  discount_lte: Int
+  discount_lte: String
 
   """All values greater than the given value."""
-  discount_gt: Int
+  discount_gt: String
 
   """All values greater than or equal the given value."""
-  discount_gte: Int
+  discount_gte: String
+
+  """All values containing the given string."""
+  discount_contains: String
+
+  """All values not containing the given string."""
+  discount_not_contains: String
+
+  """All values starting with the given string."""
+  discount_starts_with: String
+
+  """All values not starting with the given string."""
+  discount_not_starts_with: String
+
+  """All values ending with the given string."""
+  discount_ends_with: String
+
+  """All values not ending with the given string."""
+  discount_not_ends_with: String
   price: Int
 
   """All values that are not equal to given value."""

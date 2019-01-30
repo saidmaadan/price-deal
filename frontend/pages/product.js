@@ -1,6 +1,10 @@
+import SingleProduct from '../components/SingleProduct';
+
 const Product = props => {
     return (
-        <div>It works</div>
+        <div>
+            <SingleProduct id={props.query.id} />
+        </div>
     )
 }
 

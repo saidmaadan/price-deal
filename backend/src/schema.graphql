@@ -16,6 +16,7 @@ type Mutation{
         originalPrice: Int,
         discount: Int,
         price: Int): Product!
+    deleteProduct(id: ID!): Product
 }
 
 type Query{

@@ -47,8 +47,7 @@ const UPDATE_PRODUCT_MUTATION = gql`
 `;
 
 class UpdateProduct extends Component {
-    state = {
-    };
+    state = {};
 
     handleChange = e => {
         const { name, type, value } = e.target;

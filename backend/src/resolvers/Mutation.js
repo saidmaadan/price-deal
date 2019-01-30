@@ -23,7 +23,19 @@ const Mutations = {
           },
           info
         );
-      }
+    },
+
+    async deleteProduct(parent, args, ctx, info) {
+        const where = { id: args.id };
+        // 1. find the Product
+        const product = await ctx.db.query.product({ where }, `{ id title }`);
+        // 2. Check if they own that product, or have the permissions
+        
+    
+        // 3. Delete it!
+        return ctx.db.mutation.deleteProduct({ where }, info);
+      },
+
 };
 
 module.exports = Mutations;

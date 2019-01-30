@@ -1,3 +1,3 @@
-# Advanced-React
+# React, Next, Apollo Client, GraphQL and Prisma
 
-frontend
+Client
