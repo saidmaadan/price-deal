@@ -20,6 +20,8 @@ type Mutation{
 }
 
 type Query{
-    products: [Product]!
+    products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, first: Int): [Product]!
     product(where: ProductWhereUniqueInput!): Product
+    productsConnection(where: ProductWhereInput): ProductConnection!
+
 }

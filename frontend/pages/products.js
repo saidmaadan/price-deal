@@ -1,12 +1,3 @@
-import Home from './index';
+import Products from './index';
 
-
-// const ProductsPage = () {
-//     return (
-//         <div>
-//             <Products />
-//         </div>
-//     )
-// }
-
-export default Home;
+export default Products;
