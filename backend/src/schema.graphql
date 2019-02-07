@@ -37,6 +37,7 @@ type Query{
     product(where: ProductWhereUniqueInput!): Product
     productsConnection(where: ProductWhereInput): ProductConnection!
     me: User
+    users: [User]!
 
 }
 

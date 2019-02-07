@@ -6,8 +6,17 @@ const { transport, makeANiceEmail } = require('../mail');
 
 const Mutations = {
     async createProduct(parent, args, ctx, info){
+        if (!ctx.request.userId) {
+            throw new Error('You must be logged in to do that!');
+        }
         const product = await ctx.db.mutation.createProduct({
             data:{
+                // This is how to create a relationship between the Product and the User
+                user:{
+                    connect: {
+                        id: ctx.request.userId,
+                    },
+                },
                 ...args
             }
         }, info);

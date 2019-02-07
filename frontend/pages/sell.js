@@ -1,8 +1,12 @@
 import CreateProduct from '../components/CreateProduct';
+import PleaseSignin from '../components/PleaseSignin';
 
 const Sell = props => (
     <div>
-        <CreateProduct />
+        <PleaseSignin>
+            <CreateProduct />
+        </PleaseSignin>
+        
     </div>
 )
 

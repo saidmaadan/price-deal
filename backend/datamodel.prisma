@@ -29,6 +29,6 @@ type Product{
   price: Int!
   createdAt: DateTime!
   updatedAt: DateTime!
-  # user: User!
+  user: User!
 
 }
