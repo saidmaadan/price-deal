@@ -8,9 +8,9 @@ import PropTypes from 'prop-types';
 const possiblePermissions = [
   'ADMIN',
   'USER',
-  'ITEMCREATE',
-  'ITEMUPDATE',
-  'ITEMDELETE',
+  'PRODUCTCREATE',
+  'PRODUCTUPDATE',
+  'PRODUCTDELETE',
   'PERMISSIONUPDATE',
 ];
 

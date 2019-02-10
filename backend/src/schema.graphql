@@ -1,49 +1,56 @@
 # import * from './generated/prisma.graphql'
 
 type SuccessMessage {
-  message: String
+	message: String
 }
 
-type Mutation{
-    createProduct(
-        title: String, 
-        description: String,
-        image: String,
-        largeImage: String,
-        originalPrice: Int
-        discount: Int
-        price: Int
-        ): Product!
-    updateProduct(
-        id: ID!, 
-        title: String,
-        description: String, 
-        originalPrice: Int,
-        discount: Int,
-        price: Int): Product!
-    deleteProduct(id: ID!): Product
-    signup(email: String!, password: String!, name: String!): User!
-    signin(email: String!, password: String!): User!
-    signout: SuccessMessage
-    requestReset(email: String!): SuccessMessage
-    resetPassword(resetToken: String!, password: String!, confirmPassword: String!): User!
-
-
-
+type Mutation {
+	createProduct(
+		title: String
+		description: String
+		image: String
+		largeImage: String
+		originalPrice: Int
+		discount: Int
+		price: Int
+	): Product!
+	updateProduct(
+		id: ID!
+		title: String
+		description: String
+		originalPrice: Int
+		discount: Int
+		price: Int
+	): Product!
+	deleteProduct(id: ID!): Product
+	signup(email: String!, password: String!, name: String!): User!
+	signin(email: String!, password: String!): User!
+	signout: SuccessMessage
+	requestReset(email: String!): SuccessMessage
+	resetPassword(
+		resetToken: String!
+		password: String!
+		confirmPassword: String!
+	): User!
+	updatePermissions(permissions: [Permission], userId: ID!): User
 }
 
-type Query{
-    products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, first: Int): [Product]!
-    product(where: ProductWhereUniqueInput!): Product
-    productsConnection(where: ProductWhereInput): ProductConnection!
-    me: User
-    users: [User]!
-
+type Query {
+	products(
+		where: ProductWhereInput
+		orderBy: ProductOrderByInput
+		skip: Int
+		first: Int
+	): [Product]!
+	product(where: ProductWhereUniqueInput!): Product
+	productsConnection(where: ProductWhereInput): ProductConnection!
+	me: User
+	users: [User]!
 }
 
-type User{
-  id: ID!
-  name: String!
-  email: String!
-  permissions: [Permission!]!
+type User {
+	id: ID!
+	name: String!
+	email: String!
+	permissions: [Permission!]!
 }
