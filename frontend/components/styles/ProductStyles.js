@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Product = styled.div`
+const Product = styled.div `
   background: white;
   border: 1px solid ${props => props.theme.offWhite};
   box-shadow: ${props => props.theme.bs};

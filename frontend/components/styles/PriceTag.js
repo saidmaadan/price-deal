@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PriceTag = styled.span`
+const PriceTag = styled.span `
   background: ${props => props.theme.green};
   transform: rotate(3deg);
   color: white;
