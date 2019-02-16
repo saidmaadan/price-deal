@@ -1,6 +1,6 @@
 export default function calcTotalPrice(cart) {
-  return cart.reduce((tally, cartItem) => {
-    if (!cartItem.item) return tally;
-    return tally + cartItem.quantity * cartItem.item.price;
+  return cart.reduce((tally, cartProduct) => {
+    if (!cartProduct.product) return tally;
+    return tally + cartProduct.quantity * cartProduct.product.price;
   }, 0);
 }

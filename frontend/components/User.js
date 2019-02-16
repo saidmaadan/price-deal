@@ -9,7 +9,17 @@ const CURRENT_USER_QUERY = gql`
         email
         name
         permissions
-      
+        cart{
+          id
+          quantity
+          product {
+            id
+            price
+            image
+            title
+            description
+          }
+        }
     }
 }
 `;
