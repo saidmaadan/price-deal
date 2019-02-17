@@ -52,7 +52,7 @@ class RemoveFromCart extends Component {
                 }}
                 >
                 {(removeFromCart, { loading, error }) => (
-                    <BigButton
+                    <BigButton                    
                     disabled={loading}
                     onClick={() => {
                         removeFromCart().catch(err => alert(err.message));
