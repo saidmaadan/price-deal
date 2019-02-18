@@ -7,7 +7,7 @@ const DropDown = styled.div`
   border: 1px solid ${props => props.theme.lightgrey};
 `;
 
-const DropDownItem = styled.div`
+const DropDownProduct = styled.div`
   border-bottom: 1px solid ${props => props.theme.lightgrey};
   background: ${props => (props.highlighted ? '#f7f7f7' : 'white')};
   padding: 1rem;
@@ -44,4 +44,4 @@ const SearchStyles = styled.div`
   }
 `;
 
-export { DropDown, DropDownItem, SearchStyles };
+export { DropDown, DropDownProduct, SearchStyles };
