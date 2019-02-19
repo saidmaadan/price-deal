@@ -48,7 +48,7 @@ class AutoComplete extends Component {
         resetIdCounter();
         return (
             <SearchStyles>
-                <Downshift onChange={routeToProduct} productToString={product => (product === null ? '' : product.title)}>
+                <Downshift onChange={routeToProduct} itemToString={product => (product === null ? '' : product.title)}>
                     {({ getInputProps, getItemProps, isOpen, inputValue, highlightedIndex }) => (
                         <div>
                             <ApolloConsumer>

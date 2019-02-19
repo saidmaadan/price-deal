@@ -35,6 +35,7 @@ type Mutation {
 	updatePermissions(permissions: [Permission], userId: ID!): User
 	addToCart(id: ID!): CartProduct
 	removeFromCart(id: ID!): CartProduct
+	createOrder(token: String!): Order!
 	
 }
 
@@ -49,6 +50,8 @@ type Query {
 	productsConnection(where: ProductWhereInput): ProductConnection!
 	me: User
 	users: [User]!
+	order(id: ID!): Order
+  	orders(orderBy: OrderOrderByInput): [Order]!
 }
 
 type User {
@@ -57,4 +60,5 @@ type User {
 	email: String!
 	permissions: [Permission!]!
 	cart: [CartProduct!]!
+	orders: [OrderProduct]
 }
