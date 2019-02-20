@@ -28,16 +28,21 @@ function totalProducts(cart) {
   }
   
 class PaymentProcessing extends Component {
-    onToken = (res, createOrder) => {
-        console.log("On Token");
+    onToken = async (res, createOrder) => {
+        console.log('On Token');
         console.log(res.id);
+        NProgress.start();
         // manually call the mutation once we have the stripe token
-        createOrder({
+        const order = await createOrder({
             variables: {
                 token: res.id,
             },
         }).catch(err => {
             alert(err.message);
+        });
+        Router.push({
+            pathname: '/order',
+            query: { id: order.data.createOrder.id },
         });
     };
   render() {
@@ -57,8 +62,7 @@ class PaymentProcessing extends Component {
                         stripeKey="pk_test_xaGcexh6613z9GmfH5kvDMXy"
                         currency="USD"
                         email={me.email}
-                        token={res => this.onToken(res, createOrder)}
-                        
+                        token={res => this.onToken(res, createOrder)}       
                     >
                         {this.props.children}
                           </StripeCheckout>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const OrderItemStyles = styled.li`
+const OrderProductStyles = styled.li`
   box-shadow: ${props => props.theme.bs};
   list-style: none;
   padding: 2rem;
@@ -41,4 +41,4 @@ const OrderItemStyles = styled.li`
   }
 `;
 
-export default OrderItemStyles;
+export default OrderProductStyles;

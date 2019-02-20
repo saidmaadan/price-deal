@@ -28,6 +28,7 @@ type Product {
   originalPrice: Int!
   discount: String
   price: Int!
+  address: String
   createdAt: DateTime!
   updatedAt: DateTime!
   user: User!
@@ -54,7 +55,7 @@ type OrderProduct {
 
 type Order {
   id: ID! @unique
-  items: [OrderProduct!]!
+  products: [OrderProduct!]!
   total: Int!
   user: User!
   charge: String!

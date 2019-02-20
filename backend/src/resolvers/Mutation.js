@@ -332,35 +332,35 @@ const Mutations = {
           currency: 'USD',
           source: args.token,
         });
-        // // 4. Convert the CartItems to OrderItems
-        // const orderItems = user.cart.map(cartItem => {
-        //   const orderItem = {
-        //     ...cartItem.item,
-        //     quantity: cartItem.quantity,
-        //     user: { connect: { id: userId } },
-        //   };
-        //   delete orderItem.id;
-        //   return orderItem;
-        // });
+        // // 4. Convert the CartProducts to OrderProducts
+        const orderProducts = user.cart.map(cartProduct => {
+          const orderProduct = {
+            ...cartProduct.product,
+            quantity: cartProduct.quantity,
+            user: { connect: { id: userId } },
+          };
+          delete orderProduct.id;
+          return orderProduct;
+        });
     
         // // 5. create the Order
-        // const order = await ctx.db.mutation.createOrder({
-        //   data: {
-        //     total: charge.amount,
-        //     charge: charge.id,
-        //     items: { create: orderItems },
-        //     user: { connect: { id: userId } },
-        //   },
-        // });
-        // // 6. Clean up - clear the users cart, delete cartItems
-        // const cartItemIds = user.cart.map(cartItem => cartItem.id);
-        // await ctx.db.mutation.deleteManyCartItems({
-        //   where: {
-        //     id_in: cartItemIds,
-        //   },
-        // });
-        // // 7. Return the Order to the client
-        // return order;
+        const order = await ctx.db.mutation.createOrder({
+          data: {
+            total: charge.amount,
+            charge: charge.id,
+            products: { create: orderProducts },
+            user: { connect: { id: userId } },
+          },
+        });
+        // // 6. Clean up - clear the users cart, delete cartProducts
+        const cartProductIds = user.cart.map(cartProduct => cartProduct.id);
+        await ctx.db.mutation.deleteManyCartProducts({
+          where: {
+            id_in: cartProductIds,
+          },
+        });
+        // 7. Return the Order to the client
+        return order;
     },
 
 

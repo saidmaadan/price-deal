@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/said-maadan-5c289b/price-deal/dev
-# timestamp: Tue Feb 19 2019 09:48:32 GMT-0600 (Central Standard Time)
+# timestamp: Wed Feb 20 2019 10:06:31 GMT-0600 (Central Standard Time)
 
 type AggregateCartProduct {
   count: Int!
@@ -377,7 +377,7 @@ interface Node {
 
 type Order implements Node {
   id: ID!
-  items(where: OrderProductWhereInput, orderBy: OrderProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [OrderProduct!]
+  products(where: OrderProductWhereInput, orderBy: OrderProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [OrderProduct!]
   total: Int!
   user: User!
   charge: String!
@@ -398,7 +398,7 @@ type OrderConnection {
 input OrderCreateInput {
   total: Int!
   charge: String!
-  items: OrderProductCreateManyInput
+  products: OrderProductCreateManyInput
   user: UserCreateOneInput!
 }
 
@@ -1170,7 +1170,7 @@ input OrderSubscriptionWhereInput {
 input OrderUpdateInput {
   total: Int
   charge: String
-  items: OrderProductUpdateManyInput
+  products: OrderProductUpdateManyInput
   user: UserUpdateOneRequiredInput
 }
 
@@ -1334,9 +1334,9 @@ input OrderWhereInput {
 
   """All values greater than or equal the given value."""
   updatedAt_gte: DateTime
-  items_every: OrderProductWhereInput
-  items_some: OrderProductWhereInput
-  items_none: OrderProductWhereInput
+  products_every: OrderProductWhereInput
+  products_some: OrderProductWhereInput
+  products_none: OrderProductWhereInput
   user: UserWhereInput
 }
 
@@ -1378,6 +1378,7 @@ type Product implements Node {
   originalPrice: Int!
   discount: String
   price: Int!
+  address: String
   createdAt: DateTime!
   updatedAt: DateTime!
   user: User!
@@ -1401,6 +1402,7 @@ input ProductCreateInput {
   originalPrice: Int!
   discount: String
   price: Int!
+  address: String
   user: UserCreateOneInput!
 }
 
@@ -1435,6 +1437,8 @@ enum ProductOrderByInput {
   discount_DESC
   price_ASC
   price_DESC
+  address_ASC
+  address_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
@@ -1450,6 +1454,7 @@ type ProductPreviousValues {
   originalPrice: Int!
   discount: String
   price: Int!
+  address: String
   createdAt: DateTime!
   updatedAt: DateTime!
 }
@@ -1501,6 +1506,7 @@ input ProductUpdateDataInput {
   originalPrice: Int
   discount: String
   price: Int
+  address: String
   user: UserUpdateOneRequiredInput
 }
 
@@ -1512,6 +1518,7 @@ input ProductUpdateInput {
   originalPrice: Int
   discount: String
   price: Int
+  address: String
   user: UserUpdateOneRequiredInput
 }
 
@@ -1523,6 +1530,7 @@ input ProductUpdateManyMutationInput {
   originalPrice: Int
   discount: String
   price: Int
+  address: String
 }
 
 input ProductUpdateOneInput {
@@ -1832,6 +1840,46 @@ input ProductWhereInput {
 
   """All values greater than or equal the given value."""
   price_gte: Int
+  address: String
+
+  """All values that are not equal to given value."""
+  address_not: String
+
+  """All values that are contained in given list."""
+  address_in: [String!]
+
+  """All values that are not contained in given list."""
+  address_not_in: [String!]
+
+  """All values less than the given value."""
+  address_lt: String
+
+  """All values less than or equal the given value."""
+  address_lte: String
+
+  """All values greater than the given value."""
+  address_gt: String
+
+  """All values greater than or equal the given value."""
+  address_gte: String
+
+  """All values containing the given string."""
+  address_contains: String
+
+  """All values not containing the given string."""
+  address_not_contains: String
+
+  """All values starting with the given string."""
+  address_starts_with: String
+
+  """All values not starting with the given string."""
+  address_not_starts_with: String
+
+  """All values ending with the given string."""
+  address_ends_with: String
+
+  """All values not ending with the given string."""
+  address_not_ends_with: String
   createdAt: DateTime
 
   """All values that are not equal to given value."""
