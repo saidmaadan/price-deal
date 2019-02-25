@@ -45,9 +45,9 @@ exports[`<Product/> renders and matches the snapshot 1`] = `
         Edit ✏️
       </a>
     </Link>
-    <button>
-      Add To cart
-    </button>
+    <addToCart
+      id="PD89G"
+    />
     <DeleteProduct
       id="PD89G"
     >

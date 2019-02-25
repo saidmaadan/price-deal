@@ -246,11 +246,12 @@ function (_Component) {
 /*!**********************************!*\
   !*** ./components/Pagination.js ***!
   \**********************************/
-/*! exports provided: default */
+/*! exports provided: default, PAGINATION_QUERY */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGINATION_QUERY", function() { return PAGINATION_QUERY; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
@@ -327,7 +328,7 @@ var Pagination = function Pagination(props) {
         lineNumber: 28
       },
       __self: this
-    }, "Sick Fits! \u2014 Page ", page, " of ", pages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    }, "Price Deal! \u2014 Page ", page, " of ", pages)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       prefetch: true,
       href: {
         pathname: 'products',
@@ -393,6 +394,7 @@ var Pagination = function Pagination(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Pagination);
+
 
 /***/ }),
 
@@ -30045,7 +30047,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 7:
+/***/ 3:
 /*!*********************************!*\
   !*** multi ./pages/products.js ***!
   \*********************************/
@@ -30070,5 +30072,5 @@ module.exports = dll_5d62d38be3592dca3a42;
 
 /***/ })
 
-},[[7,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=products.js.map

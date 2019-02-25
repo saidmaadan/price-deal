@@ -26,7 +26,7 @@ const Pagination = props => (
           <PaginationStyles data-test="pagination">
             <Head>
               <title>
-                Sick Fits! — Page {page} of {pages}
+                Price Deal! — Page {page} of {pages}
               </title>
             </Head>
             <Link
@@ -63,3 +63,4 @@ const Pagination = props => (
   );
 
 export default Pagination;
+export { PAGINATION_QUERY };
