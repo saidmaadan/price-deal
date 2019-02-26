@@ -7,6 +7,8 @@ const fakeProduct = () => ({
   __typename: 'Product',
   id: 'abc123',
   price: 5000,
+  discount: 20,
+  originalPrice: 8000,
   user: null,
   image: 'dog-small.jpg',
   title: 'dogs are best',

@@ -32,13 +32,13 @@ const CREATE_PRODUCT_MUTATION = gql`
 
 class CreateProduct extends Component {
     state = {
-        title: 'Rolex',
-        description: 'A brand new rolex wrist watch',
+        title: '',
+        description: '',
         image: '',
         largeImage: '',
-        price: 500,
-        originalPrice: 1000,
-        discount: 2,
+        price: 0,
+        originalPrice: 0,
+        discount: 0,
     };
 
     handleChange = e => {
