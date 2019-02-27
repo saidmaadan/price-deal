@@ -46,31 +46,35 @@ class PaymentProcessing extends Component {
         });
     };
   render() {
-      return (
-          <User>
-              {({ data: { me } }) => (
-                  <Mutation
-                    mutation={CREATE_ORDER_MUTATION}
-                    refetchQueries={[{ query: CURRENT_USER_QUERY }]}
-                  >
-                    {createOrder => (
-                    <StripeCheckout
-                        amount={calcTotalPrice(me.cart)}
-                        name="Price Deals"
-                        description={`Order of ${totalProducts(me.cart)} Products`}
-                        image={me.cart[0].product && me.cart[0].product.image}
-                        stripeKey="pk_test_xaGcexh6613z9GmfH5kvDMXy"
-                        currency="USD"
-                        email={me.email}
-                        token={res => this.onToken(res, createOrder)}       
-                    >
-                        {this.props.children}
-                          </StripeCheckout>
-                    )}
-                </Mutation>
+    return (
+      <User>
+        {({ data: { me }, loading }) => {
+          if (loading) return null;
+          return (
+            <Mutation
+              mutation={CREATE_ORDER_MUTATION}
+              refetchQueries={[{ query: CURRENT_USER_QUERY }]}
+            >
+              {createOrder => (
+                <StripeCheckout
+                  amount={calcTotalPrice(me.cart)}
+                  name="Price Deals"
+                  description={`Order of ${totalProducts(me.cart)} Products`}
+                  image={me.cart[0].product && me.cart[0].product.image}
+                  stripeKey="pk_test_xaGcexh6613z9GmfH5kvDMXy"
+                  currency="USD"
+                  email={me.email}
+                  token={res => this.onToken(res, createOrder)}
+                >
+                  {this.props.children}
+                </StripeCheckout>
               )}
-          </User>
+            </Mutation>
+          );
+        }}
+      </User>
     )
   }
 }
-export default PaymentProcessing
+export default PaymentProcessing;
+export { CREATE_ORDER_MUTATION };
