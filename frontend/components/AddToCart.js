@@ -35,3 +35,4 @@ class addToCart extends Component {
   }
 }
 export default addToCart;
+export { ADD_TO_CART_MUTATION };
