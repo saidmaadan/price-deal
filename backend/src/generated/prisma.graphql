@@ -1,5 +1,5 @@
-# source: https://us1.prisma.sh/said-maadan-5c289b/price-deal/dev
-# timestamp: Wed Feb 20 2019 10:06:31 GMT-0600 (Central Standard Time)
+# source: https://priceee-deal-pro-57baf92864.herokuapp.com/priceee-deals-prod/prod
+# timestamp: Thu Feb 28 2019 08:35:35 GMT-0600 (Central Standard Time)
 
 type AggregateCartProduct {
   count: Int!
@@ -213,7 +213,6 @@ input CartProductUpdateManyMutationInput {
 input CartProductUpdateManyWithoutUserInput {
   create: [CartProductCreateWithoutUserInput!]
   connect: [CartProductWhereUniqueInput!]
-  set: [CartProductWhereUniqueInput!]
   disconnect: [CartProductWhereUniqueInput!]
   delete: [CartProductWhereUniqueInput!]
   update: [CartProductUpdateWithWhereUniqueWithoutUserInput!]
@@ -834,7 +833,6 @@ input OrderProductUpdateManyDataInput {
 input OrderProductUpdateManyInput {
   create: [OrderProductCreateInput!]
   connect: [OrderProductWhereUniqueInput!]
-  set: [OrderProductWhereUniqueInput!]
   disconnect: [OrderProductWhereUniqueInput!]
   delete: [OrderProductWhereUniqueInput!]
   update: [OrderProductUpdateWithWhereUniqueNestedInput!]
@@ -1363,6 +1361,7 @@ enum Permission {
   ADMIN
   USER
   SELLER
+  AUTHOR
   PRODUCTCREATE
   PRODUCTUPDATE
   PRODUCTDELETE

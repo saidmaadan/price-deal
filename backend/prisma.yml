@@ -1,6 +1,7 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://priceee-deal-pro-57baf92864.herokuapp.com/priceee-deals-prod/prod
 datamodel: datamodel.prisma
-# secret: ${env:PRISMA_SECRET}
+secret: ${env:PRISMA_MANAGEMENT_API_SECRET}
 hooks:
   post-deploy:
     - graphql get-schema -p prisma
